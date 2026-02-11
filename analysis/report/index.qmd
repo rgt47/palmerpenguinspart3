@@ -7,7 +7,7 @@ categories: [R Programming, Data Science, Statistical Computing, Cross-Validatio
 description: "Part 3 of our 5-part series where we rigorously validate our models and introduce polynomial features and random forest competitors"
 image: "../../images/posts/penguin-hero.jpg"
 document-type: "blog"
-draft: true
+draft: false
 execute:
   echo: true
   warning: false
@@ -285,6 +285,17 @@ Ready to ensure your model meets all assumptions? Head to [Part 4: Model Diagnos
 5. [Part 5: Random Forest vs Linear Models](../palmer_penguins_part5/)
 :::
 
-*Have questions about cross-validation or model selection? Feel free to reach out on [Twitter](https://twitter.com/yourhandle) or [LinkedIn](https://linkedin.com/in/yourprofile). You can also find the complete code for this series on [GitHub](https://github.com/yourusername/palmer-penguins-series).*
+# Let's Connect
 
-**About the Author:** [Your name] is a [your role] specializing in statistical ecology and machine learning. This series demonstrates best practices for model validation and selection in biological research.
+- **GitHub**: [rgt47](https://github.com/rgt47)
+- **Twitter/X**: [@rgt47](https://twitter.com/rgt47)
+- **LinkedIn**: [Ronald Glenn Thomas](https://linkedin.com/in/rgthomaslab)
+- **Email**: [Contact through website](https://rgtlab.org/contact)
+
+I would enjoy hearing from you if you:
+
+- Spot an error or have a correction
+- Have a better approach to any of these analyses
+- Want to discuss statistical methodology
+- Have questions about the Palmer Penguins dataset
+- Just want to connect and talk about data science
