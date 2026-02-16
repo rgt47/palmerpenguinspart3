@@ -6,7 +6,7 @@ subtitle: >
   learning alternatives
 author: "Ronald G. Thomas"
 date: "2025-01-03"
-categories:
+categories: [r, palmer-penguins, cross-validation, random-forest, machine-learning]
   [R Programming, Data Science, Statistical Computing]
 description: >
   I did not really know whether my regression models
