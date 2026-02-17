@@ -8,10 +8,9 @@ author: "Ronald G. Thomas"
 date: "2025-01-03"
 categories: [r, palmer-penguins, cross-validation, random-forest, machine-learning]
 description: >
-  I did not really know whether my regression models
-  would hold up on new data until I implemented
-  ten-fold cross-validation and compared them against
-  a random forest.
+  Testing whether regression models hold up on new
+  data through ten-fold cross-validation and
+  comparison against a random forest.
 image: "media/images/hero.jpg"
 document-type: "blog"
 draft: true
@@ -59,48 +58,46 @@ penguin morphometrics:
 
 # Introduction
 
-I did not really know whether my regression models
-would hold up on new data until I sat down and
-implemented ten-fold cross-validation. In Part 2, we
-achieved an R-squared of 0.863 by incorporating
-species information, but that number was computed on
-the same data we used to fit the model. Training-set
-performance can be misleading, and I needed a more
-honest estimate.
+Do the regression models developed in Parts 1 and 2
+hold up on new data? In Part 2, an R-squared of 0.863
+was achieved by incorporating species information, but
+that number was computed on the same data used to fit
+the model. Training-set performance can be misleading,
+and a more honest estimate is needed.
 
-The problem I faced was familiar to anyone who has
-built a predictive model: the training metrics looked
-excellent, but I had no evidence that the model would
-generalise. Cross-validation offered a principled way
+The problem is familiar to anyone who has built a
+predictive model: the training metrics look excellent,
+but there is no evidence that the model will
+generalise. Cross-validation offers a principled way
 to estimate out-of-sample performance without
 requiring a separate hold-out dataset, which would
 have been difficult to justify given our modest sample
 of 333 penguins.
 
-In this post I walk through the cross-validation
-framework I used, test whether polynomial features
-add value, and pit our linear model against a random
+This post walks through the cross-validation
+framework, tests whether polynomial features add
+value, and pits the linear model against a random
 forest to see whether the additional complexity buys
 meaningful improvement.
 
 ## Motivations
 
-- I wanted an honest performance estimate that did
-  not rely on the same data used for model fitting.
-- I was curious whether adding polynomial terms would
-  capture non-linear biological relationships that a
-  straight line might miss.
-- I had heard that random forests often outperform
-  linear models and wanted to test that claim on
-  ecological data.
-- I needed a systematic framework for comparing
-  models on equal footing, using the same folds and
-  the same evaluation metric.
-- I was eager to quantify the uncertainty around my
-  performance estimates with proper confidence
-  intervals.
-- I wanted to develop a reusable cross-validation
-  workflow that I could apply to future datasets.
+The following considerations motivated this analysis:
+
+- An honest performance estimate that does not rely
+  on the same data used for model fitting.
+- Curiosity about whether adding polynomial terms
+  would capture non-linear biological relationships
+  that a straight line might miss.
+- Testing the claim that random forests often
+  outperform linear models on ecological data.
+- A systematic framework for comparing models on
+  equal footing, using the same folds and the same
+  evaluation metric.
+- Quantifying the uncertainty around performance
+  estimates with proper confidence intervals.
+- Developing a reusable cross-validation workflow
+  applicable to future datasets.
 
 ## Objectives
 
@@ -119,9 +116,8 @@ meaningful improvement.
    meaningful gain over the species-aware linear
    model.
 
-I am documenting my learning process here. If you
-spot errors or have better approaches, please let me
-know.
+Errors and better approaches are welcome; see the
+Feedback section at the end.
 
 ![](media/images/r-logo.png){.img-fluid width=30% fig-align="center"}
 
@@ -178,7 +174,7 @@ across all ten folds, we gain confidence that the
 reported R-squared is not an artefact of the
 particular sample we happened to collect. If
 performance varies widely across folds, that signals
-instability -- a warning that the model may not
+instability, a warning that the model may not
 generalise.
 
 # Getting Started
@@ -653,7 +649,7 @@ access to more predictors. For an ecological dataset
 of this size, the additional complexity of ensemble
 methods does not appear to be justified.
 
-My advice to anyone working through a similar
+A recommendation for anyone working through a similar
 modelling exercise: always cross-validate before
 drawing conclusions about model quality, and do not
 assume that a more complex model will outperform a
@@ -726,24 +722,15 @@ quarto render index.qmd
 sessionInfo()
 ```
 
-# Let's Connect
+# Feedback
 
-- **GitHub:**
-  [rgt47](https://github.com/rgt47)
-- **Twitter/X:**
-  [@rgt47](https://twitter.com/rgt47)
-- **LinkedIn:**
-  [Ronald Glenn Thomas](https://linkedin.com/in/rgthomaslab)
-- **Email:**
-  [rgtlab.org/contact](https://rgtlab.org/contact)
+Feedback is welcome for:
 
-I would enjoy hearing from you if:
-
-- You spot an error or a better approach to any of
-  the code in this post.
-- You have suggestions for topics you would like to
-  see covered.
-- You want to discuss R programming, data science, or
-  reproducible research.
-- You have questions about anything in this tutorial.
-- You just want to say hello and connect.
+- Errors or better approaches to any of the code in
+  this post
+- Suggestions for topics to cover in future posts
+- Discussion of cross-validation methodology or
+  model comparison
+- Questions about anything in this tutorial
+- General discussion of predictive modelling for
+  ecological data
