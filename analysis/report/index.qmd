@@ -7,7 +7,6 @@ subtitle: >
 author: "Ronald G. Thomas"
 date: "2025-01-03"
 categories: [r, palmer-penguins, cross-validation, random-forest, machine-learning]
-  [R Programming, Data Science, Statistical Computing]
 description: >
   I did not really know whether my regression models
   would hold up on new data until I implemented
